@@ -14,14 +14,20 @@ nnoremap <c-q> :q!<cr>
 " echo "stty -ixon" >> ~/.bashrc
 nnoremap <c-s> :w<cr>
 
-" Abrir terminal automaticamente
+" Abrir terminal
 nnoremap <c-k> :terminal<cr>
 
-" Barra lateral 
+" Abrir nova janela
+nnoremap <c-t> :tabnew
+
+" Abrir barra lateral 
 nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 20<cr>
 
 " Remover Banner da barra lateral
 let g:netrw_banner = 0
+
+" Recarregar o buffer da barra lateral
+autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
 
 " Comando para alternar o tamanho do Tab
 function! TabSize()
@@ -41,6 +47,10 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set smarttab
 set autoindent
 set smartindent
+
+" Identação melhorada no modo visual
+vnoremap < <gv
+vnoremap > >gv
 
 " Completar automaticamente ( [ { " ' ` 
 inoremap ( ()<Esc>i
@@ -72,9 +82,6 @@ endfunction
 " Faz <Enter> aceitar a sugestão selecionada no coc.nvim
 "inoremap <expr> <cr> EnterTab()
 inoremap <expr> <cr> pumvisible() ? coc#_select_confirm() : EnterTab()
-
-" Cor no arquivo EJS
-autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 " Plugins
 call plug#begin('~/.vim/plugged')
