@@ -5,6 +5,7 @@ set ignorecase
 set wildmode=longest,list
 set hlg=pt
 set ai
+set cursorline
 
 " Teclas para sair
 nnoremap q :q<cr>
