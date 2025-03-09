@@ -6,6 +6,8 @@ set wildmode=longest,list
 set hlg=pt
 set ai
 set cursorline
+set encoding=UTF-8
+set fileencoding=utf-8
 
 " Teclas para sair
 nnoremap q :q<cr>
@@ -23,6 +25,12 @@ nnoremap <c-t> :tabnew
 
 " Abrir barra lateral 
 nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 20<cr>
+
+" Adicionar uma seta antes das pastas no :Lex
+autocmd FileType lex let lines = getline(1, '$') | let lines = map(lines, 'v:val =~ "/$" ? "→ ".v:val : v:val') | call setline(1, lines)
+" Ativa suporte a ícones no Netrw
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_netrw = 1
 
 " Remover Banner da barra lateral
 let g:netrw_banner = 0
@@ -99,10 +107,23 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Cores CSS
 Plug 'ap/vim-css-color'
 
+Plug 'preservim/nerdtree'
+
+" Destacar indentação com indentLine
+Plug 'Yggdroot/indentLine'
+
 call plug#end()
+
+" Mapeia o NerdTree
+nnoremap <C-n> :NERDTree<CR>
+
+" Mostrar arquivos ocultos
+let NERDTreeShowHidden=1
 
 " Mudar a tecla do Emmet-Vim
 inoremap <c-l> <plug>(emmet-expand-abbr)
+
+let g:indentLine_enabled = 1
 
 " Tema Militar
 colorscheme military
