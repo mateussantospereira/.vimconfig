@@ -1,3 +1,6 @@
+" Vimrc
+" Autor: Mateus dos Santos Pereira
+
 syntax on
 set number
 set hls
@@ -23,20 +26,23 @@ nnoremap <c-k> :terminal<cr>
 " Abrir nova janela
 nnoremap <c-t> :tabnew
 
-" Abrir barra lateral 
-nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 20<cr>
-
-" Adicionar uma seta antes das pastas no :Lex
-autocmd FileType lex let lines = getline(1, '$') | let lines = map(lines, 'v:val =~ "/$" ? "→ ".v:val : v:val') | call setline(1, lines)
-" Ativa suporte a ícones no Netrw
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_netrw = 1
-
+" Abrir barra lateral Netrw Tree
+" nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 20<cr>
 " Remover Banner da barra lateral
-let g:netrw_banner = 0
+" let g:netrw_banner = 0
 
 " Recarregar o buffer da barra lateral
 autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
+
+" Configuração do NerdTree
+nnoremap <c-n> :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1 " Mostrar arquivos ocultos
+
+" Mudar a tecla do Emmet-Vim
+inoremap <c-l> <plug>(emmet-expand-abbr)
+
+" Configuração do indentLine
+let g:indentLine_enabled = 1
 
 " Comando para alternar o tamanho do Tab
 function! TabSize()
@@ -107,6 +113,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Cores CSS
 Plug 'ap/vim-css-color'
 
+" Icones do NerdTree
+Plug 'ryanoasis/vim-devicons'
+
+" NerdTree
 Plug 'preservim/nerdtree'
 
 " Destacar indentação com indentLine
@@ -114,16 +124,8 @@ Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
-" Mapeia o NerdTree
-nnoremap <C-n> :NERDTree<CR>
-
-" Mostrar arquivos ocultos
-let NERDTreeShowHidden=1
-
-" Mudar a tecla do Emmet-Vim
-inoremap <c-l> <plug>(emmet-expand-abbr)
-
-let g:indentLine_enabled = 1
+" Dicionário
+" set spell spelllang=pt
 
 " Tema Militar
 colorscheme military
