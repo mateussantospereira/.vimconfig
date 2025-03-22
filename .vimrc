@@ -18,6 +18,7 @@ set ai
 set cursorline
 set encoding=UTF-8
 set fileencoding=utf-8
+set guifont=FiraCode Nerd Font:style=Bold
 
 " Teclas para sair
 nnoremap q :q<cr>
