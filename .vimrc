@@ -6,7 +6,7 @@
 "  #           
 
 " Vimrc
- " Autor: Mateus dos Santos Pereira
+" Autor: Mateus dos Santos Pereira
 
 syntax on
 set number
