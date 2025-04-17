@@ -18,7 +18,7 @@ set ai
 set cursorline
 set encoding=UTF-8
 set fileencoding=utf-8
-set guifont=FiraCode Nerd Font:style=Bold
+"set guifont=Fira\ Code\ Regular\ Nerd\ Font\ Complete.otf:
 
 " Teclas para sair
 nnoremap q :q<cr>
@@ -35,16 +35,16 @@ nnoremap <c-k> :terminal<cr>
 nnoremap <c-t> :tabnew
 
 " Abrir barra lateral Netrw Tree
-" nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 20<cr>
-" Remover Banner da barra lateral
-" let g:netrw_banner = 0
+nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 25<cr>
+" "Remover Banner da barra lateral
+let g:netrw_banner = 0
 
 " Recarregar o buffer da barra lateral
 autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
 
 " Configuração do NerdTree
-nnoremap <c-n> :NERDTreeToggle<cr>
-let NERDTreeShowHidden=1 " Mostrar arquivos ocultos
+" nnoremap <c-n> :NERDTreeToggle<cr>
+" let NERDTreeShowHidden=1 " Mostrar arquivos ocultos
 
 " Mudar a tecla do Emmet-Vim
 inoremap <c-l> <plug>(emmet-expand-abbr)
@@ -103,7 +103,7 @@ function! EnterTab()
 endfunction
 
 " Faz <Enter> aceitar a sugestão selecionada no coc.nvim
-"inoremap <expr> <cr> EnterTab()
+" inoremap <expr> <cr> EnterTab()
 inoremap <expr> <cr> pumvisible() ? coc#_select_confirm() : EnterTab()
 
 " Plugins
@@ -119,13 +119,13 @@ Plug 'mateussantospereira/vim-military'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Cores CSS
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 
 " Icones do NerdTree
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " NerdTree
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " Destacar indentação com indentLine
 Plug 'Yggdroot/indentLine'
