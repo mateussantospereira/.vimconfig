@@ -35,7 +35,7 @@ nnoremap <c-k> :terminal<cr>
 nnoremap <c-t> :tabnew
 
 " Abrir barra lateral Netrw Tree
-nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 25<cr>
+" nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 25<cr>
 " "Remover Banner da barra lateral
 let g:netrw_banner = 0
 
@@ -43,8 +43,8 @@ let g:netrw_banner = 0
 autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
 
 " Configuração do NerdTree
-" nnoremap <c-n> :NERDTreeToggle<cr>
-" let NERDTreeShowHidden=1 " Mostrar arquivos ocultos
+nnoremap <c-n> :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1 " Mostrar arquivos ocultos
 
 " Mudar a tecla do Emmet-Vim
 inoremap <c-l> <plug>(emmet-expand-abbr)
@@ -125,10 +125,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ryanoasis/vim-devicons'
 
 " NerdTree
-" Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 
 " Destacar indentação com indentLine
 Plug 'Yggdroot/indentLine'
+
+" Fuzzy Finder Vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
