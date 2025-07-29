@@ -18,10 +18,9 @@ set ai
 set cursorline
 set encoding=UTF-8
 set fileencoding=utf-8
-"set guifont=Fira\ Code\ Regular\ Nerd\ Font\ Complete.otf:
+" set guifont=Fira\ Code\ Regular\ Nerd\ Font\ Complete.otf:
 
 " Teclas para sair
-nnoremap q :q<cr>
 nnoremap <c-q> :q!<cr>
 
 " Tecla para salvar
@@ -43,7 +42,7 @@ let g:netrw_banner = 0
 autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
 
 " Configuração do NerdTree
-nnoremap <c-n> :NERDTreeToggle<cr>
+nnoremap tr :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1 " Mostrar arquivos ocultos
 
 " Mudar a tecla do Emmet-Vim
@@ -127,7 +126,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ap/vim-css-color'
 
 " Icones do NerdTree
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " NerdTree
 Plug 'preservim/nerdtree'
@@ -138,6 +137,9 @@ Plug 'Yggdroot/indentLine'
 " Fuzzy Finder Vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Multiplos cursores
+Plug 'mg979/vim-visual-multi'
 
 call plug#end()
 
