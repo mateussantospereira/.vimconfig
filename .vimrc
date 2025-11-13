@@ -18,6 +18,7 @@ set ai
 set cursorline
 set encoding=UTF-8
 set fileencoding=utf-8
+set splitbelow
 " set guifont=Fira\ Code\ Regular\ Nerd\ Font\ Complete.otf:
 
 " Teclas para sair
@@ -35,11 +36,12 @@ nnoremap <c-t> :tabnew
 
 " Abrir barra lateral Netrw Tree
 " nnoremap <c-b> :let g:netrw_liststyle=3<cr>:Lex<cr>:vertical resize 25<cr>
-" "Remover Banner da barra lateral
+" Remover Banner da barra lateral
 let g:netrw_banner = 0
 
 " Recarregar o buffer da barra lateral
-autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
+" autocmd FileType netrw nnoremap <buffer> ,rr :e .<CR>
+nnoremap <buffer> ,rr <cr> 
 
 " Configuração do NerdTree
 nnoremap tr :NERDTreeToggle<cr>
@@ -110,6 +112,10 @@ endfunction
 " inoremap <expr> <cr> EnterTab()
 inoremap <expr> <cr> pumvisible() ? coc#_select_confirm() : EnterTab()
 
+" Prettier
+autocmd BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -119,11 +125,14 @@ Plug 'mattn/emmet-vim'
 " Tema Militar
 Plug 'mateussantospereira/vim-military'
 
+" Temas
+Plug 'dracula/vim'
+
 " Autocompletar
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Cores CSS
-" Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 
 " Icones do NerdTree
 Plug 'ryanoasis/vim-devicons'
@@ -140,6 +149,21 @@ Plug 'junegunn/fzf.vim'
 
 " Multiplos cursores
 Plug 'mg979/vim-visual-multi'
+
+" Vim Airline
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
+" Prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+" Java Get Set 
+Plug 'vim-scripts/java_getset.vim'
+
+" Vim PDF
+Plug 'makerj/vim-pdf'
 
 call plug#end()
 
