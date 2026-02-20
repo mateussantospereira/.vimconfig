@@ -19,6 +19,7 @@ set cursorline
 set encoding=UTF-8
 set fileencoding=utf-8
 set splitbelow
+set clipboard=unnamedplus
 " set guifont=Fira\ Code\ Regular\ Nerd\ Font\ Complete.otf:
 
 " Teclas para sair
@@ -153,6 +154,9 @@ Plug 'mg979/vim-visual-multi'
 " Vim Airline
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
+
+" Goyo, para ler no vim
+Plug 'junegunn/goyo.vim'
 
 " Prettier
 Plug 'prettier/vim-prettier', {
