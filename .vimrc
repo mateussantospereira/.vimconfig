@@ -116,7 +116,6 @@ inoremap <expr> <cr> pumvisible() ? coc#_select_confirm() : EnterTab()
 " Prettier
 autocmd BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
 
-
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -167,7 +166,13 @@ Plug 'prettier/vim-prettier', {
 Plug 'vim-scripts/java_getset.vim'
 
 " Vim PDF
-Plug 'makerj/vim-pdf'
+" Plug 'makerj/vim-pdf'
+
+" Tabular
+Plug 'godlygeek/tabular'
+
+" Prisma
+Plug 'prisma/vim-prisma'
 
 call plug#end()
 
