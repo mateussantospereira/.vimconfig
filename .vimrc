@@ -21,6 +21,7 @@ set fileencoding=utf-8
 set splitbelow
 set clipboard=unnamedplus
 set backupcopy=yes
+set mouse=a
 " set guifont=Fira\ Code\ Regular\ Nerd\ Font\ Complete.otf:
 
 " Teclas para sair
