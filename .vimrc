@@ -56,7 +56,8 @@ inoremap <c-l> <plug>(emmet-expand-abbr)
 " Configuração do Fuzzy Finder
 nnoremap bt :W <CR>
 nnoremap fr :Files <CR>
-nnoremap de :Rg <CR> " Depende do ripgrep
+" Depende do ripgrep
+nnoremap de :Rg <CR>
 
 " Configuração do indentLine
 let g:indentLine_enabled = 1
